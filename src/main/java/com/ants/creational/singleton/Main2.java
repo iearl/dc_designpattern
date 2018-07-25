@@ -24,13 +24,15 @@ public class Main2 {
 
        //通过反序列化得方式破解单例,在单例类加入回调函数readResolve()方法
         FileOutputStream fos = new FileOutputStream("e:/oos.txt");
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        BufferedOutputStream bs = new BufferedOutputStream(fos);
+        ObjectOutputStream oos = new ObjectOutputStream(bs);
         oos.writeObject(s1);
         oos.close();
         fos.close();
 
         FileInputStream fis  = new FileInputStream("e:/oos.txt");
-        ObjectInputStream ois = new ObjectInputStream(fis);
+        BufferedInputStream bis = new BufferedInputStream(fis);
+        ObjectInputStream ois = new ObjectInputStream(bis);
         SingletonDemo07 s3 = (SingletonDemo07)ois.readObject();
         System.out.println(s3==s1);
     }

@@ -8,6 +8,5 @@ public enum SingletonDemo06 {
     //避免反射、反序列化，效率高
     //没有懒加载
    INSTANCE;
-
-
+   Enum ss;
 }
