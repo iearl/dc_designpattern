@@ -10,7 +10,7 @@ public class Client {
         p.setAge(10);
         p.setBirthday(date);
         Person p2 = (Person) p.clone();
-        
+
         System.out.println(p.getBirthday());
 
         p.setBirthday(new Date(9876543));
