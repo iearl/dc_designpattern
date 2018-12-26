@@ -1,0 +1,13 @@
+迭代器模式：
+    迭代器：遍历数据
+    聚合对象：容器，准备数据
+1.聚合对象中的迭代器一般使用私有内部类，再ArrayList中的迭代器
+    private class Itr implements Iterator<E>
+2.在容器类中提供公共的方法，获得迭代器对象
+    public Iterator<E> iterator() {
+            return new Itr();
+    }
+3.在迭代器中定义相关方法。在ArrayList中提供三个方法
+    public boolean hasNext();是否有下一个元素
+    public E next()；取得下一个元素，游标移动
+    public void remove();移除元素
